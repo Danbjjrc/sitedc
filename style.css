@@ -1,4 +1,6 @@
-/* Paleta Sóbria e Profissional */
+/* ==========================================
+   1. VARIÁVEIS E RESET GLOBAL
+   ========================================== */
 :root {
     --bg-body: #0d0e12;
     --bg-surface: #16181f;
@@ -22,7 +24,9 @@ body {
     line-height: 1.5;
 }
 
-/* --- NAVEGAÇÃO SUPERIOR --- */
+/* ==========================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================== */
 header {
     background-color: var(--bg-surface);
     border-bottom: 1px solid var(--border-color);
@@ -34,12 +38,14 @@ header {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.2rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
+/* Logo */
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
@@ -53,6 +59,7 @@ header {
     color: var(--accent-blue);
 }
 
+/* Menu de Links no Desktop */
 nav ul {
     display: flex;
     gap: 30px;
@@ -71,7 +78,27 @@ nav a:hover {
     color: var(--text-primary);
 }
 
-/* --- MANCHETE PRINCIPAL (HERO) --- */
+/* Esconde o Checkbox e o Botão Hambúrguer no Desktop */
+input.menu-check,
+.menu-check,
+#menu-check {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+.menu-toggle {
+    display: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ==========================================
+   3. ESTRUTURA PRINCIPAL E HERO SECTION
+   ========================================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -85,6 +112,7 @@ nav a:hover {
     margin-bottom: 3rem;
 }
 
+/* Card Principal (Capa) */
 .hero-main {
     position: relative;
     background-color: var(--bg-surface);
@@ -101,7 +129,6 @@ nav a:hover {
     border-color: var(--accent-blue);
 }
 
-/* Simulação de imagem de fundo escurecida para leitura */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -143,6 +170,7 @@ nav a:hover {
     font-size: 1.05rem;
 }
 
+/* Coluna Lateral do Hero */
 .hero-side {
     display: flex;
     flex-direction: column;
@@ -155,6 +183,11 @@ nav a:hover {
     border-radius: 4px;
     border: 1px solid var(--border-color);
     flex: 1;
+    transition: border-color 0.2s ease;
+}
+
+.side-news:hover {
+    border-color: var(--accent-blue);
 }
 
 .side-news .tag {
@@ -168,7 +201,9 @@ nav a:hover {
     text-decoration: none;
 }
 
-/* --- GRID DE ÚLTIMAS NOTÍCIAS --- */
+/* ==========================================
+   4. GRID DE ÚLTIMAS NOTÍCIAS
+   ========================================== */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -216,7 +251,11 @@ nav a:hover {
     line-height: 1.3;
 }
 
-/* --- RESPONSIVIDADE --- */
+/* ==========================================
+   5. RESPONSIVIDADE E MENU MOBILE
+   ========================================== */
+
+/* Tablets e telas até 900px */
 @media (max-width: 900px) {
     .hero-section {
         grid-template-columns: 1fr;
@@ -224,148 +263,34 @@ nav a:hover {
     .news-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    nav ul {
-        display: none;
-    }
 }
 
-@media (max-width: 600px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================================
-   AJUSTES DO MENU E HEADER
-   ========================================== */
-
-/* 1. Esconde o checkbox invisível em TODAS as telas */
-.menu-check {
-    display: none !important;
-}
-
-/* 2. No COMPUTADOR (telas grandes): esconde o botão hambúrguer */
-.menu-toggle {
-    display: none;
-}
-
-/* 3. Estilo do container da navegação no computador */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* 4. Regras exclusivas para CELULAR (telas de até 768px) */
+/* Celulares e telas até 768px (Ativação do Menu Mobile) */
 @media (max-width: 768px) {
-    .nav-container {
-        position: relative;
-    }
-
-    /* Exibe o botão hambúrguer apenas no celular */
+    /* Exibe o botão hambúrguer */
     .menu-toggle {
         display: block;
-        color: #ffffff;
-        font-size: 1.8rem;
-        cursor: pointer;
         padding: 5px;
     }
 
-    /* Esconde o menu de links por padrão no celular */
-    nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #111111;
-        border-top: 1px solid #333;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-        z-index: 1000;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding: 10px 0;
-        margin: 0;
-        list-style: none;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid #222;
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-    /* Abre o menu quando o botão for tocado no celular */
-    .menu-check:checked ~ nav {
-        display: block;
-    }
-}
-
-/* ==========================================
-   CORREÇÃO DO CABEÇALHO E MENU MOBILE
-   ========================================== */
-
-/* Garante que o checkbox fique oculto em TODAS as telas */
-input.menu-check,
-#menu-check {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    position: absolute !important;
-    left: -9999px !important;
-}
-
-/* Estrutura do container do topo */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: 10px 20px;
-}
-
-/* No computador: esconde o botão hambúrguer */
-.menu-toggle {
-    display: none;
-    color: #ffffff;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-/* Regras para CELULAR (telas de até 768px) */
-@media (max-width: 768px) {
-    /* Exibe o ícone hambúrguer no mobile */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Esconde a lista de links padrão no mobile */
+    /* Esconde a lista padrão e posiciona o menu suspenso */
     .nav-container nav {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #111111;
-        border-top: 1px solid #333;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        background-color: var(--bg-surface);
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
         z-index: 1000;
     }
 
     .nav-container nav ul {
+        display: flex;
         flex-direction: column;
         padding: 10px 0;
-        margin: 0;
-        list-style: none;
+        gap: 0;
     }
 
     .nav-container nav ul li {
@@ -375,14 +300,26 @@ input.menu-check,
 
     .nav-container nav ul li a {
         display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid #222;
-        color: #ffffff;
-        text-decoration: none;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-primary);
     }
 
-    /* Abre o menu quando tocar no hambúrguer */
+    /* Revela o menu quando o toque acionar o checkbox oculto */
     #menu-check:checked ~ nav {
         display: block !important;
+    }
+}
+
+/* Telas pequenas até 600px */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    .news-grid {
+        grid-template-columns: 1fr;
     }
 }

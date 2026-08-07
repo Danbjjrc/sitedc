@@ -11,31 +11,33 @@
 
     <!-- HEADER / NAVEGAÇÃO -->
     <header>
-    <div class="nav-container">
-        <a href="index.html" class="logo"><span>DC</span> Diário</a>
-        
-        <!-- Checkbox deve vir ANTES do nav -->
-        <input type="checkbox" id="menu-check" class="menu-check">
-        <label for="menu-check" class="menu-toggle" aria-label="Abrir Menu">☰</label>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span>DC</span> Diário</a>
+            
+            <!-- Checkbox oculto e botão para menu mobile sem JS -->
+            <input type="checkbox" id="menu-check" class="menu-check" style="display: none !important;">
+            <label for="menu-check" class="menu-toggle" aria-label="Abrir Menu">☰</label>
 
-        <nav>
-            <ul>
-                <li><a href="naodisponivel.html">Últimas Notícias</a></li>
-                <li><a href="naodisponivel.html">Cinema & TV</a></li>
-                <li><a href="naodisponivel.html">HQs</a></li>
-                <li><a href="naodisponivel.html">Reviews</a></li>
-                <li><a href="naodisponivel.html">Loja Oficial</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+            <nav>
+                <ul>
+                    <li><a href="naodisponivel.html">Últimas Notícias</a></li>
+                    <li><a href="naodisponivel.html">Cinema & TV</a></li>
+                    <li><a href="naodisponivel.html">HQs</a></li>
+                    <li><a href="naodisponivel.html">Reviews</a></li>
+                    <li><a href="naodisponivel.html">Loja Oficial</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
+        
         <!-- SEÇÃO HERO (MANCHETES PRINCIPAIS) -->
-        <div class="hero-section">
+        <section class="hero-section">
             
             <a href="noticias/batman-novo-filme.html" class="hero-main" style="text-decoration: none; color: inherit;">
-                <div class="hero-bg"></div> <!-- Substituir o fundo por imagem real da notícia via CSS -->
+                <div class="hero-bg"></div>
                 <div class="hero-content">
                     <span class="tag">Exclusivo</span>
                     <h1 class="hero-title">O novo DCU ganha data oficial: O que esperar do primeiro capítulo 'Deuses e Monstros'</h1>
@@ -54,48 +56,58 @@
                 </a>
             </div>
 
-        </div>
+        </section>
 
         <!-- ÚLTIMAS NOTÍCIAS EM GRID -->
-        <div class="section-header">
-            <h2>Notícias Recentes</h2>
-            <a href="naodisponivel.html" style="color: var(--accent-blue); text-decoration: none; font-size: 0.9rem;">Ver todas as notícias &rarr;</a>
-        </div>
+        <section class="news-section">
+            <div class="section-header">
+                <h2>Notícias Recentes</h2>
+                <a href="naodisponivel.html" style="color: var(--accent-blue, #3b82f6); text-decoration: none; font-size: 0.9rem;">Ver todas as notícias &rarr;</a>
+            </div>
 
-        <div class="news-grid">
-            
-            <article class="news-card">
-                <a href="naodisponivel.html" style="text-decoration: none; color: inherit;">
-                    <div class="news-card-img"></div>
-                    <div>
-                        <span class="news-date">Há 2 horas</span>
-                        <h3 class="news-card-title">Liga da Justiça: Detalhes dos bastidores revelam artes conceituais descartadas</h3>
-                    </div>
-                </a>
-            </article>
+            <div class="news-grid">
+                
+                <article class="news-card">
+                    <a href="naodisponivel.html" style="text-decoration: none; color: inherit;">
+                        <div class="news-card-img"></div>
+                        <div>
+                            <span class="news-date">Há 2 horas</span>
+                            <h3 class="news-card-title">Liga da Justiça: Detalhes dos bastidores revelam artes conceituais descartadas</h3>
+                        </div>
+                    </a>
+                </article>
 
-            <article class="news-card">
-                <a href="naodisponivel.html" style="text-decoration: none; color: inherit;">
-                    <div class="news-card-img"></div>
-                    <div>
-                        <span class="news-date">Há 4 horas</span>
-                        <h3 class="news-card-title">Rumor aponta novo ator escalado para interpretar o Lanterna Verde</h3>
-                    </div>
-                </a>
-            </article>
+                <article class="news-card">
+                    <a href="naodisponivel.html" style="text-decoration: none; color: inherit;">
+                        <div class="news-card-img"></div>
+                        <div>
+                            <span class="news-date">Há 4 horas</span>
+                            <h3 class="news-card-title">Rumor aponta novo ator escalado para interpretar o Lanterna Verde</h3>
+                        </div>
+                    </a>
+                </article>
 
-            <article class="news-card">
-                <a href="naodisponivel.html" style="text-decoration: none; color: inherit;">
-                    <div class="news-card-img"></div>
-                    <div>
-                        <span class="news-date">Há 6 horas</span>
-                        <h3 class="news-card-title">Resenha HQ: Por que 'A Piada Mortal' ainda influencia as histórias modernas</h3>
-                    </div>
-                </a>
-            </article>
+                <article class="news-card">
+                    <a href="naodisponivel.html" style="text-decoration: none; color: inherit;">
+                        <div class="news-card-img"></div>
+                        <div>
+                            <span class="news-date">Há 6 horas</span>
+                            <h3 class="news-card-title">Resenha HQ: Por que 'A Piada Mortal' ainda influencia as histórias modernas</h3>
+                        </div>
+                    </a>
+                </article>
 
-        </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- FOOTER / RODAPÉ -->
+    <footer>
+        <div class="footer-container" style="text-align: center; padding: 20px; border-top: 1px solid #222; margin-top: 40px; color: #777; font-size: 0.85rem;">
+            <p>&copy; 2026 DC Diário. Portal não oficial mantido por fãs do Universo DC.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
