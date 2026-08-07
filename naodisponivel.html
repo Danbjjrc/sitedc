@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Não Disponível | DC Diário</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 65vh;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .error-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #e5a93c; /* Tom dourado padrão do site */
+            text-shadow: 0 4px 20px rgba(229, 169, 60, 0.2);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            max-width: 500px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: #e5a93c;
+            color: #111111;
+            padding: 12px 28px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-home:hover {
+            background-color: #f5b94c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span>DC</span> Diário</a>
+            <nav>
+                <ul>
+                    <li><a href="naodisponivel.html">Últimas Notícias</a></li>
+                    <li><a href="naodisponivel.html">Cinema & TV</a></li>
+                    <li><a href="naodisponivel.html">HQs</a></li>
+                    <li><a href="naodisponivel.html">Reviews</a></li>
+                    <li><a href="naodisponivel.html">Loja Oficial</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+        <div class="error-container">
+            <h1 class="error-title">Não Disponível</h1>
+            <p class="error-message">
+                Esta página ou conteúdo não está disponível no momento.
+            </p>
+            <a href="index.html" class="btn-home">Voltar para o Início</a>
+        </div>
+    </main>
+
+</body>
+</html>
