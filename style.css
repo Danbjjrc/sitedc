@@ -309,3 +309,80 @@ nav a:hover {
         display: block;
     }
 }
+
+/* ==========================================
+   CORREÇÃO DO CABEÇALHO E MENU MOBILE
+   ========================================== */
+
+/* Garante que o checkbox fique oculto em TODAS as telas */
+input.menu-check,
+#menu-check {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* Estrutura do container do topo */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+}
+
+/* No computador: esconde o botão hambúrguer */
+.menu-toggle {
+    display: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Regras para CELULAR (telas de até 768px) */
+@media (max-width: 768px) {
+    /* Exibe o ícone hambúrguer no mobile */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Esconde a lista de links padrão no mobile */
+    .nav-container nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #111111;
+        border-top: 1px solid #333;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+
+    .nav-container nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .nav-container nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-container nav ul li a {
+        display: block;
+        padding: 12px 0;
+        border-bottom: 1px solid #222;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    /* Abre o menu quando tocar no hambúrguer */
+    #menu-check:checked ~ nav {
+        display: block !important;
+    }
+}
